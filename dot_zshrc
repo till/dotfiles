@@ -3,6 +3,7 @@
 
 # --- Environment Variables & PATH ---
 export NVM_DIR="$HOME/.nvm"
+typeset -U PATH
 export PATH="$PATH:$HOME/go/bin"
 
 # --- NVM ---
