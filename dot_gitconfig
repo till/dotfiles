@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+name = Till Klampaeckel
+email = till@php.net
+[init]
+	defaultBranch = main
+
+# allow private dep
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[log]
+	abbrevcommit = yes
