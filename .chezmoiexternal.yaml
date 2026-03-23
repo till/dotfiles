@@ -1,0 +1,6 @@
+".claude/skills/brainstorming":
+  type: archive
+  url: "https://github.com/obra/superpowers/archive/main.tar.gz"
+  stripComponents: 3
+  include: ["superpowers-main/skills/brainstorming/**"]
+  refreshPeriod: "168h"
