@@ -1,12 +1,67 @@
-# This is Git's per-user configuration file.
 [user]
-name = Till Klampaeckel
-email = till@php.net
+	name = "Till Klampaeckel"
+	email = till@php.net
+	signingkey = 1482E46F
+
+[core]
+	editor = vim
+	excludesfile = /Users/till/.gitignore_global
+
+[alias]
+  pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/$1"
+  pg = !"git log --pretty=format:'%h : %s' --date-order --graph"
+  tc = !sh -c 'git rev-list $0 | head -n 1'
+  lol = log --graph --decorate --oneline
+  lola = log --graph --decorate --oneline --all
+  s = status
+  c = commit
+  co = checkout
+
+  pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+  delete-merged-branches = !git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
+  cleanup = !git co master && git pull && git delete-merged-branches && git pr-clean
+	uncommit = reset HEAD^
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+
+[push]
+	default = current
+
+#[remote "origin"]
+#    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
+[credential]
+	helper = osxkeychain
+
+[commit]
+	gpgsign = true
+
+[color "diff"]
+	whitespace = red reverse
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
 [init]
 	defaultBranch = main
 
 # allow private dep
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+
+[pull]
+	rebase = false
+
+[fetch]
+	prune = true
+
 [log]
 	abbrevcommit = yes
