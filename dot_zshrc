@@ -21,5 +21,8 @@ fpath+=($HOME/.docker/completions)
 autoload -Uz compinit
 compinit
 
+# --- GPG
+export GPG_TTY=$(tty)
+
 # --- Show profiling
 # zprof

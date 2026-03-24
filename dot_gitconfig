@@ -1,7 +1,7 @@
 [user]
 	name = "Till Klampaeckel"
 	email = till@php.net
-	signingkey = 1482E46F
+	signingkey = A6C390D31482E46F
 
 [core]
 	editor = vim
@@ -40,6 +40,9 @@
 
 [commit]
 	gpgsign = true
+
+[gpg]
+	program = gpg
 
 [color "diff"]
 	whitespace = red reverse
