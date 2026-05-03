@@ -44,6 +44,13 @@
 [gpg]
 	program = gpg
 
+# tangled.sh / tangled.org only verify SSH commit signatures, not GPG.
+# Override signing format for any repo with a tangled remote.
+[includeIf "hasconfig:remote.*.url:**tangled.sh**"]
+	path = ~/.gitconfig-tangled
+[includeIf "hasconfig:remote.*.url:**tangled.org**"]
+	path = ~/.gitconfig-tangled
+
 [color "diff"]
 	whitespace = red reverse
 

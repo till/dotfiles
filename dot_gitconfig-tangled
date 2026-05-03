@@ -1,0 +1,5 @@
+[gpg]
+	format = ssh
+
+[user]
+	signingkey = /Users/till/.ssh/id_rsa.pub
