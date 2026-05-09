@@ -5,6 +5,20 @@
   include: ["superpowers-main/skills/brainstorming/**"]
   refreshPeriod: "168h"
 
+".claude/skills/writing-plans":
+  type: archive
+  url: "https://github.com/obra/superpowers/archive/main.tar.gz"
+  stripComponents: 3
+  include: ["superpowers-main/skills/writing-plans/**"]
+  refreshPeriod: "168h"
+
+".claude/skills/dispatching-parallel-agents":
+  type: archive
+  url: "https://github.com/obra/superpowers/archive/main.tar.gz"
+  stripComponents: 3
+  include: ["superpowers-main/skills/dispatching-parallel-agents/**"]
+  refreshPeriod: "168h"
+
 ".claude/agents/code-reviewer.md":
   type: file
   url: "https://raw.githubusercontent.com/obra/superpowers/main/agents/code-reviewer.md"
